@@ -24,19 +24,19 @@ jobs:
         if: matrix.clusters == 'prod'
         run: echo "This step runs only for prod"
 
-  prod_only_job:
-    runs-on: ubuntu-latest
-    needs: matrix_job
-    if: ${{ matrix.clusters == 'prod' }}
-    strategy:
-      matrix:
-        clusters:
-          - prod
-          - dev
-          - staging
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  # prod_only_job:
+  #   runs-on: ubuntu-latest
+  #   needs: matrix_job
+  #   if: ${{ matrix.clusters == 'prod' }}
+  #   strategy:
+  #     matrix:
+  #       clusters:
+  #         - prod
+  #         - dev
+  #         - staging
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
-      - name: Run only in prod job
-        run: echo "This job runs only for prod"
+  #     - name: Run only in prod job
+  #       run: echo "This job runs only for prod"
