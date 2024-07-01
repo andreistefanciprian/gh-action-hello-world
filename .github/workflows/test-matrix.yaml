@@ -9,9 +9,9 @@ jobs:
     strategy:
       matrix:
         clusters:
-          - prod
-          - dev
-          - staging
+        - prod
+        - dev
+        - staging
 
     steps:
       - name: Checkout code
@@ -22,7 +22,11 @@ jobs:
 
       - if: matrix.clusters == 'prod'
         name: Run step for prod only
-        run: echo "This step runs only for prod"
+        run: echo "This step runs only for prod
+
+      - if: ${{ matrix.clusters == 'prod' }}
+        name: Run step for DEV only
+        run: echo "This step runs only for DEV
 
   # prod_only_job:
   #   runs-on: ubuntu-latest
