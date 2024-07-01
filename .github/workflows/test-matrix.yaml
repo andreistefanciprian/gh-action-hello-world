@@ -30,8 +30,10 @@ jobs:
     if: ${{ matrix.clusters == 'prod' }}
     strategy:
       matrix:
-        clusters: [prod, dev, staging]
-
+        clusters:
+          - prod
+          - dev
+          - staging
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
