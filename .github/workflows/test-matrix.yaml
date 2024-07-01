@@ -22,9 +22,9 @@ jobs:
 
       - if: matrix.clusters == 'prod'
         name: Run step for prod only
-        run: echo "This step runs only for prod
+        run: echo "This step runs only for prod"
 
-      - if: ${{ matrix.clusters == 'prod' }}
+      - if: ${{ matrix.clusters == 'dev' }}
         name: Run step for DEV only
         run: echo "This step runs only for DEV
 
