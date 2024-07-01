@@ -20,8 +20,8 @@ jobs:
       - name: Run step always
         run: echo "This step runs for all clusters"
 
-      - name: Run step for prod only
-        if: matrix.clusters == 'prod'
+      - if: matrix.clusters == 'prod'
+        name: Run step for prod only
         run: echo "This step runs only for prod"
 
   # prod_only_job:
