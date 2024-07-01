@@ -26,7 +26,7 @@ jobs:
 
       - if: ${{ matrix.clusters == 'dev' }}
         name: Run step for DEV only
-        run: echo "This step runs only for DEV
+        run: echo "This step runs only for DEV"
 
   # prod_only_job:
   #   runs-on: ubuntu-latest
